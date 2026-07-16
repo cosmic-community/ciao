@@ -5,7 +5,7 @@ import { getMetafieldValue, formatPrice } from '@/lib/cosmic'
 export default function ProductCard({ product }: { product: Product }) {
   if (!product) return null
 
-  const name = getMetafieldValue(product.metadata?.name || product.metadata?.product_name) || product.title
+  const name = getMetafieldValue(product.metadata?.product_name) || product.title
   const image = product.metadata?.main_image
   const price = product.metadata?.price
   const salePrice = product.metadata?.sale_price
